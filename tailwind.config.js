@@ -4,38 +4,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Clean warm fast-food backgrounds
-        cream: '#FFF8F3',
-        vanilla: '#FFEEE2',
-        // Hot appetizing orange = primary accent (token name "gold" kept for compatibility)
+        // Soft blush-cream pâtisserie backgrounds
+        cream: '#FFF8F6',
+        vanilla: '#FCE8EF',
+        // Raspberry / macaron pink = primary accent (token name "gold" kept for compatibility)
         gold: {
-          DEFAULT: '#FF6B2C',
-          light: '#FFA76B',
-          dark: '#E24E0E',
+          DEFAULT: '#D6457F',
+          light: '#F4A6C2',
+          dark: '#B02E66',
         },
-        // Fast-food red (rose.deep = danger / debt signal)
+        // Cherry red (rose.deep = danger / debt signal)
         rose: {
-          DEFAULT: '#EF4444',
-          deep: '#C1121F',
+          DEFAULT: '#E11D48',
+          deep: '#9F1239',
         },
-        // Fresh teal for variety accents
+        // Lavender macaron accent
         lavender: {
-          DEFAULT: '#0EA5A4',
-          deep: '#0C7E7D',
+          DEFAULT: '#9B7FD6',
+          deep: '#7A5CC0',
         },
-        // Deep charcoal — used for high-contrast text, sidebar & overlays
-        chocolate: '#1A120B',
-        // Warm amber (warning)
-        caramel: '#F59E0B',
-        // Fresh green (success)
-        pistachio: '#16A34A',
-        // Punchy yellow pop (fast-food secondary)
-        sun: '#FFC43D',
+        // Dark chocolate — high-contrast text, sidebar & overlays
+        chocolate: '#2E1A17',
+        // Caramel (warning)
+        caramel: '#C68B3E',
+        // Pistachio (success)
+        pistachio: '#5E9E5A',
+        // Butter / vanilla gold
+        sun: '#F2C77E',
         text: {
-          primary: '#1F1206',
-          secondary: '#5C4632',
-          muted: '#9A8574',
-          light: '#FFF8F3',
+          primary: '#3A1E1B',
+          secondary: '#6B4843',
+          muted: '#A88A86',
+          light: '#FFF8F6',
         },
       },
       fontFamily: {
@@ -44,19 +44,19 @@ export default {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #C1121F 0%, #E63946 32%, #FF6B2C 72%, #FF8A3D 100%)',
-        'gradient-sidebar': 'linear-gradient(180deg, #1A120B 0%, #2A1C10 52%, #231708 100%)',
-        'gradient-card': 'linear-gradient(145deg, #FFFFFF 0%, #FFF8F3 100%)',
-        'gradient-button': 'linear-gradient(135deg, #FF8A3D 0%, #FF6B2C 50%, #E24E0E 100%)',
-        'gradient-rose': 'linear-gradient(135deg, #FF7A7A 0%, #EF4444 50%, #C1121F 100%)',
-        'gradient-lavender': 'linear-gradient(135deg, #2DD4BF 0%, #0EA5A4 50%, #0C7E7D 100%)',
-        'gradient-mint': 'linear-gradient(135deg, #4ADE80 0%, #16A34A 100%)',
-        'gradient-glass': 'linear-gradient(135deg, rgba(255,248,243,0.92) 0%, rgba(255,238,226,0.75) 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #4A2A25 0%, #8E2F5A 38%, #D6457F 74%, #F4A6C2 100%)',
+        'gradient-sidebar': 'linear-gradient(180deg, #2E1A17 0%, #4A2A25 52%, #3A211D 100%)',
+        'gradient-card': 'linear-gradient(145deg, #FFFFFF 0%, #FFF8F6 100%)',
+        'gradient-button': 'linear-gradient(135deg, #E9739F 0%, #D6457F 50%, #B02E66 100%)',
+        'gradient-rose': 'linear-gradient(135deg, #F58BA0 0%, #E11D48 50%, #9F1239 100%)',
+        'gradient-lavender': 'linear-gradient(135deg, #C9B6EC 0%, #9B7FD6 50%, #7A5CC0 100%)',
+        'gradient-mint': 'linear-gradient(135deg, #B5DDA4 0%, #5E9E5A 100%)',
+        'gradient-glass': 'linear-gradient(135deg, rgba(255, 248, 246,0.92) 0%, rgba(252, 232, 239,0.75) 100%)',
       },
       boxShadow: {
-        card: '0 4px 24px rgba(26, 18, 11, 0.08), 0 1px 4px rgba(26, 18, 11, 0.04)',
-        hover: '0 10px 34px rgba(226, 78, 14, 0.18), 0 2px 8px rgba(26, 18, 11, 0.08)',
-        gold: '0 8px 24px rgba(255, 107, 44, 0.42)',
+        card: '0 4px 24px rgba(46, 26, 23, 0.08), 0 1px 4px rgba(46, 26, 23, 0.04)',
+        hover: '0 10px 34px rgba(176, 46, 102, 0.18), 0 2px 8px rgba(46, 26, 23, 0.08)',
+        gold: '0 8px 24px rgba(214, 69, 127, 0.42)',
       },
       borderRadius: {
         xl: '0.875rem',

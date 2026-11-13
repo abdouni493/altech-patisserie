@@ -356,7 +356,7 @@ export default function POS() {
         <div className="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-white/70 border border-gold/15 shadow-sm mb-4 max-w-xl">
           {([
             { key: 'sale', label: 'Vente directe', sub: 'Payée et remise immédiatement', icon: Receipt },
-            { key: 'command', label: 'Commande', sub: 'En attente · cuisine / livraison', icon: ClipboardList },
+            { key: 'command', label: 'Commande', sub: 'En attente · laboratoire / livraison', icon: ClipboardList },
           ] as const).map((m) => {
             const Icon = m.icon;
             const active = mode === m.key;
@@ -478,7 +478,7 @@ export default function POS() {
               </div>
               <div className="col-span-2 relative">
                 <StickyNote size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
-                <input value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note pour la cuisine (optionnel)" className="w-full h-9 rounded-xl border border-gold/25 bg-white/70 pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold/40" />
+                <input value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note pour le laboratoire (optionnel)" className="w-full h-9 rounded-xl border border-gold/25 bg-white/70 pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold/40" />
               </div>
             </div>
           )}
@@ -590,7 +590,7 @@ export default function POS() {
                     printKitchenTicket(printPrompt.command!, settings);
                     useCommandStore.getState().markKitchenPrinted(printPrompt.command!.id);
                   }}>
-                    <ChefHat size={16} /> Ticket cuisine
+                    <ChefHat size={16} /> Ticket laboratoire
                   </Button>
                   {can('commands', 'view') && (
                     <Button variant="ghost" onClick={() => { setPrintPrompt(null); navigate('/commands'); }}>

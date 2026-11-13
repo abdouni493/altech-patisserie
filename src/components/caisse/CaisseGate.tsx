@@ -44,7 +44,7 @@ export function CaisseGate() {
 
   return createPortal(
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-[#1A120B]/55 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[#2E1A17]/55 backdrop-blur-sm" />
       <motion.div
         initial={{ opacity: 0, scale: 0.94, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}

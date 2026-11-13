@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Pizza, Lock, User, Mail, ChevronDown, Eye, EyeOff, Sandwich } from 'lucide-react';
+import { Lock, User, Mail, ChevronDown, Eye, EyeOff, Cake, CakeSlice, Croissant, Cookie, Donut } from 'lucide-react';
+
+const PASTRY_ICONS = [Cake, Croissant, CakeSlice, Cookie, Donut];
 import { useAuthStore } from '@/store/authStore';
 import { homePathFor } from '@/lib/home';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -18,7 +20,7 @@ const floatingIcons = Array.from({ length: 14 }).map((_, i) => ({
   size: 18 + (i % 5) * 10,
   delay: i * 0.35,
   duration: 7 + (i % 4),
-  icon: i % 3 === 0 ? 'pizza' : 'sandwich',
+  icon: PASTRY_ICONS[i % PASTRY_ICONS.length],
 }));
 
 export default function Login() {
@@ -88,20 +90,20 @@ export default function Login() {
     <div className="min-h-screen w-full bg-gradient-hero flex items-center justify-center p-4 relative overflow-hidden">
       {/* Subtle warm overlay pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 20% 30%, rgba(200,137,46,0.3) 0%, transparent 50%), 
-                          radial-gradient(circle at 80% 70%, rgba(212,133,106,0.2) 0%, transparent 50%)`
+        backgroundImage: `radial-gradient(circle at 20% 30%, rgba(244,166,194,0.35) 0%, transparent 50%), 
+                          radial-gradient(circle at 80% 70%, rgba(243,210,154,0.25) 0%, transparent 50%)`
       }} />
 
-      {/* Floating background icons — wheat and croissant */}
+      {/* Floating background icons — cakes, croissants & cookies */}
       {floatingIcons.map((f) => (
         <motion.div
           key={f.id}
-          className="absolute text-amber-200/15 pointer-events-none"
+          className="absolute text-pink-200/15 pointer-events-none"
           style={{ left: f.left, top: f.top }}
           animate={{ y: [0, -25, 0], rotate: [0, 12, 0], opacity: [0.08, 0.2, 0.08] }}
           transition={{ duration: f.duration, delay: f.delay, repeat: Infinity, ease: 'easeInOut' }}
         >
-          {f.icon === 'pizza' ? <Pizza size={f.size} /> : <Sandwich size={f.size} />}
+          <f.icon size={f.size} />
         </motion.div>
       ))}
 
@@ -110,7 +112,7 @@ export default function Login() {
         <button
           onClick={() => setLanguage('fr')}
           className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-            language === 'fr' ? 'bg-white text-chocolate shadow-lg' : 'bg-white/15 text-amber-100 hover:bg-white/25'
+            language === 'fr' ? 'bg-white text-chocolate shadow-lg' : 'bg-white/15 text-rose-50 hover:bg-white/25'
           }`}
         >
           🇫🇷 FR
@@ -118,7 +120,7 @@ export default function Login() {
         <button
           onClick={() => setLanguage('ar')}
           className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-            language === 'ar' ? 'bg-white text-chocolate shadow-lg' : 'bg-white/15 text-amber-100 hover:bg-white/25'
+            language === 'ar' ? 'bg-white text-chocolate shadow-lg' : 'bg-white/15 text-rose-50 hover:bg-white/25'
           }`}
         >
           🇩🇿 AR
@@ -186,7 +188,7 @@ export default function Login() {
             size="lg"
             className="w-full flex items-center justify-center gap-2 border-gold/30 hover:border-gold hover:bg-gold/10 text-gold-dark font-semibold shadow-sm"
           >
-            <Sandwich size={18} className="animate-pulse text-gold" />
+            <CakeSlice size={18} className="animate-pulse text-gold" />
             Accès Démo Admin (Rapide)
           </Button>
 

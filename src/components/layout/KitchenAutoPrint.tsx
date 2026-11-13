@@ -56,7 +56,7 @@ export function KitchenAutoPrint() {
       // Stagger multiple tickets so the print dialogs don't collide
       window.setTimeout(() => {
         printKitchenTicket(c, settings);
-        toast.success(`Ticket cuisine imprimé : ${c.reference}`);
+        toast.success(`Ticket laboratoire imprimé : ${c.reference}`);
         printing.current.delete(c.id);
       }, i * 1500);
     });

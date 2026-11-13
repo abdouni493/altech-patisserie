@@ -896,14 +896,14 @@ function ReportDetail({ report, stores, onBack }: { report: CaisseReport; stores
 // Presentational helpers
 // ============================================================
 const ACCENTS: Record<string, string> = {
-  gold: 'from-[#FFA76B] to-[#E24E0E]',
-  rose: 'from-[#FF7A7A] to-[#C1121F]',
-  pistachio: 'from-[#6EE7A8] to-[#16A34A]',
-  caramel: 'from-[#FCD34D] to-[#F59E0B]',
-  lavender: 'from-[#2DD4BF] to-[#0C7E7D]',
+  gold: 'from-[#F4A6C2] to-[#B02E66]',
+  rose: 'from-[#F58BA0] to-[#9F1239]',
+  pistachio: 'from-[#B5DDA4] to-[#5E9E5A]',
+  caramel: 'from-[#F3D29A] to-[#C68B3E]',
+  lavender: 'from-[#C9B6EC] to-[#7A5CC0]',
 };
 const ACCENT_TEXT: Record<string, string> = {
-  gold: 'text-gold-dark', rose: 'text-rose-deep', pistachio: 'text-pistachio', caramel: 'text-gold-dark', lavender: 'text-[#0C7E7D]',
+  gold: 'text-gold-dark', rose: 'text-rose-deep', pistachio: 'text-pistachio', caramel: 'text-gold-dark', lavender: 'text-[#7A5CC0]',
 };
 
 function SectionHeader({ icon, title, total }: { icon: React.ReactNode; title: string; total?: number }) {
@@ -987,7 +987,7 @@ function MovementBlock({ title, icon, tone, rows, total, emptyLabel, language }:
   rows: { id: string; date: string; amount: number; description: string; createdBy?: string }[];
   total: number; emptyLabel: string; language: 'fr' | 'ar';
 }) {
-  const grad = tone === 'mint' ? 'from-[#6EE7A8] to-[#16A34A]' : 'from-[#FF7A7A] to-[#C1121F]';
+  const grad = tone === 'mint' ? 'from-[#B5DDA4] to-[#5E9E5A]' : 'from-[#F58BA0] to-[#9F1239]';
   const text = tone === 'mint' ? 'text-pistachio' : 'text-rose-deep';
   return (
     <div>

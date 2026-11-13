@@ -13,7 +13,7 @@ import type { Worker, WorkerPost } from '@/types';
 
 const POSTS: { key: WorkerPost; label: string; desc: string; icon: typeof ChefHat }[] = [
   { key: 'general', label: 'Général', desc: 'Permissions configurées manuellement', icon: Settings2 },
-  { key: 'kitchen', label: 'Cuisine', desc: 'Interface Commandes : voir + imprimer, sans modifier ni supprimer', icon: ChefHat },
+  { key: 'kitchen', label: 'Laboratoire', desc: 'Interface Commandes : voir + imprimer, sans modifier ni supprimer', icon: ChefHat },
   { key: 'cashier', label: 'Caissier', desc: 'Point de vente + Commandes. Doit ouvrir la caisse avant de travailler', icon: Wallet },
   { key: 'deliverer', label: 'Livreur', desc: 'Commandes à livrer qui lui sont assignées, avec adresses', icon: Bike },
 ];

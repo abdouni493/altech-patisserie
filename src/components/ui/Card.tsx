@@ -16,11 +16,11 @@ interface CardProps {
 }
 
 const accentStrip: Record<Exclude<Accent, 'none'>, string> = {
-  gold: 'from-[#FFA76B] to-[#E24E0E]',
-  rose: 'from-[#FF7A7A] to-[#C1121F]',
-  pistachio: 'from-[#6EE7A8] to-[#16A34A]',
-  caramel: 'from-[#FCD34D] to-[#F59E0B]',
-  lavender: 'from-[#2DD4BF] to-[#0C7E7D]',
+  gold: 'from-[#F4A6C2] to-[#B02E66]',
+  rose: 'from-[#F58BA0] to-[#9F1239]',
+  pistachio: 'from-[#B5DDA4] to-[#5E9E5A]',
+  caramel: 'from-[#F3D29A] to-[#C68B3E]',
+  lavender: 'from-[#C9B6EC] to-[#7A5CC0]',
 };
 
 export function Card({ children, className, index = 0, hoverable = false, onClick, accent = 'none' }: CardProps) {

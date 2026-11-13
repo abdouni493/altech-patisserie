@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sandwich } from 'lucide-react';
+import { CakeSlice } from 'lucide-react';
 import { useSettingsStore } from '@/store/settingsStore';
 
 interface LogoBadgeProps {
@@ -15,11 +15,11 @@ export function LogoBadge({ size = 44, icon = 24, className = '' }: LogoBadgePro
 
   return (
     <div className={`relative shrink-0 ${className}`} style={{ width: size, height: size }}>
-      {/* Rotating conic-gradient frame — hot fast-food tones */}
+      {/* Rotating conic-gradient frame — raspberry, butter & chocolate tones */}
       <motion.div
         aria-hidden
         className="absolute -inset-[3px] rounded-2xl"
-        style={{ background: 'conic-gradient(from 0deg, #FF6B2C, #FFC43D, #EF4444, #E24E0E, #FF6B2C)' }}
+        style={{ background: 'conic-gradient(from 0deg, #D6457F, #F2C77E, #9B7FD6, #B02E66, #D6457F)' }}
         animate={{ rotate: 360 }}
         transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
       />
@@ -27,7 +27,7 @@ export function LogoBadge({ size = 44, icon = 24, className = '' }: LogoBadgePro
       <motion.div
         aria-hidden
         className="absolute -inset-[3px] rounded-2xl blur-md opacity-60"
-        style={{ background: 'conic-gradient(from 180deg, #FF6B2C, #FFC43D, #EF4444, #E24E0E, #FF6B2C)' }}
+        style={{ background: 'conic-gradient(from 180deg, #D6457F, #F2C77E, #9B7FD6, #B02E66, #D6457F)' }}
         animate={{ rotate: -360, opacity: [0.35, 0.7, 0.35] }}
         transition={{ rotate: { duration: 9, repeat: Infinity, ease: 'linear' }, opacity: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
       />
@@ -37,7 +37,7 @@ export function LogoBadge({ size = 44, icon = 24, className = '' }: LogoBadgePro
           <img src={logo} alt="logo" className="h-full w-full object-cover rounded-2xl" />
         ) : (
           <div className="h-full w-full bg-gradient-button flex items-center justify-center rounded-2xl">
-            <Sandwich size={icon} className="text-white" />
+            <CakeSlice size={icon} className="text-white" />
           </div>
         )}
       </div>

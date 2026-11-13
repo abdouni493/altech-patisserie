@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft, Eye, Wallet, Lock, Unlock, Calendar, Clock, CheckCircle2, AlertTriangle, Receipt, ClipboardList,
-  Coins, Printer, Trash2, ArrowDownLeft, ArrowUpRight, Bike, UtensilsCrossed, ShoppingBag,
+  Coins, Printer, Trash2, ArrowDownLeft, ArrowUpRight, Bike, Coffee, ShoppingBag,
 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -239,7 +239,7 @@ export function CaisseSessions() {
 
 function TypeIcon({ type }: { type?: OrderType }) {
   if (type === 'delivery') return <Bike size={12} />;
-  if (type === 'table') return <UtensilsCrossed size={12} />;
+  if (type === 'table') return <Coffee size={12} />;
   return <ShoppingBag size={12} />;
 }
 

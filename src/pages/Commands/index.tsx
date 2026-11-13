@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ClipboardList, Plus, Eye, Pencil, Trash2, CheckCircle2, Printer, ChefHat, Settings2, Clock,
-  MapPin, Phone, Bike, UtensilsCrossed, ShoppingBag, AlertTriangle, Coins, CakeSlice, Flame, PackageCheck, Truck, Calendar, StickyNote, User,
+  MapPin, Phone, Bike, Coffee, ShoppingBag, AlertTriangle, Coins, CakeSlice, Flame, PackageCheck, Truck, Calendar, StickyNote, User,
 } from 'lucide-react';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { Button } from '@/components/ui/Button';
@@ -35,7 +35,7 @@ const KITCHEN_VARIANT: Record<KitchenStatus, 'info' | 'warning' | 'success'> = {
 
 function TypeIcon({ type, size = 14 }: { type?: OrderType; size?: number }) {
   if (type === 'delivery') return <Bike size={size} />;
-  if (type === 'table') return <UtensilsCrossed size={size} />;
+  if (type === 'table') return <Coffee size={size} />;
   return <ShoppingBag size={size} />;
 }
 
@@ -136,7 +136,7 @@ export default function CommandsPage() {
   return (
     <div>
       <PageHeader
-        title={isDeliverer ? 'Mes livraisons' : isKitchen ? 'Commandes — Cuisine' : 'Commandes'}
+        title={isDeliverer ? 'Mes livraisons' : isKitchen ? 'Commandes — Laboratoire' : 'Commandes'}
         icon={isKitchen ? <ChefHat size={24} /> : isDeliverer ? <Truck size={24} /> : <ClipboardList size={24} />}
         subtitle={`${stats.pending} en attente · ${filtered.length} affichées`}
         actions={
@@ -289,7 +289,7 @@ export default function CommandsPage() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <Info label="Statut" value={c.status === 'finalised' ? 'Finalisée' : 'En attente'} />
-                <Info label="Cuisine" value={KITCHEN_LABEL[c.kitchenStatus || 'new']} />
+                <Info label="Laboratoire" value={KITCHEN_LABEL[c.kitchenStatus || 'new']} />
                 <Info label="Service" value={orderTypeLabel({ ...c, orderType: c.orderType || 'takeaway' })} />
                 <Info label="Créée par" value={c.createdBy || '—'} />
                 <Info label="Client" value={c.clientName} />
@@ -351,7 +351,7 @@ export default function CommandsPage() {
               )}
 
               <div className="flex flex-wrap justify-end gap-2 pt-1">
-                {!isDeliverer && <Button variant="secondary" onClick={() => printKitchen(c)}><ChefHat size={16} /> Ticket cuisine</Button>}
+                {!isDeliverer && <Button variant="secondary" onClick={() => printKitchen(c)}><ChefHat size={16} /> Ticket laboratoire</Button>}
                 {!isKitchen && <Button variant="secondary" onClick={() => printCommandReceipt(c, settings)}><Printer size={16} /> Bon client</Button>}
                 {c.status === 'pending' && canEdit && <Button variant="outline" onClick={() => navigate(`/pos?edit=${c.id}`)}><Pencil size={16} /> Modifier</Button>}
                 {c.status === 'pending' && canFinalise && <Button variant="mint" onClick={() => { setViewCmd(null); openFinalise(c); }}><CheckCircle2 size={16} /> Finaliser</Button>}
@@ -450,13 +450,13 @@ export default function CommandsPage() {
       <Modal open={optionsOpen} onClose={() => setOptionsOpen(false)} title="Options des commandes" size="sm">
         <div className="space-y-4">
           <div className="rounded-xl border border-gold/15 bg-white p-3 space-y-2">
-            <Switch checked={autoPrintKitchen} onChange={(v) => { setAutoPrintKitchen(v); toast.success(v ? 'Impression automatique cuisine activée' : 'Impression automatique désactivée'); }} label="Impression automatique des nouvelles commandes en cuisine" />
-            <p className="text-xs text-text-muted">Chaque nouvelle commande (ou commande modifiée) imprime automatiquement un ticket cuisine sur le poste cuisine.</p>
+            <Switch checked={autoPrintKitchen} onChange={(v) => { setAutoPrintKitchen(v); toast.success(v ? 'Impression automatique laboratoire activée' : 'Impression automatique désactivée'); }} label="Impression automatique des nouvelles commandes au laboratoire" />
+            <p className="text-xs text-text-muted">Chaque nouvelle commande (ou commande modifiée) imprime automatiquement un ticket laboratoire sur le poste laboratoire.</p>
           </div>
           {!isKitchen && (
             <div className="rounded-xl border border-gold/15 bg-white p-3 space-y-2">
-              <Switch checked={deviceIsKitchen} onChange={(v) => { setKitchenPrinterDevice(v); setDeviceIsKitchen(v); }} label="Cet appareil est le poste d’impression cuisine" />
-              <p className="text-xs text-text-muted">Les profils « Cuisine » impriment automatiquement. Activez cette option pour qu’un autre appareil (connecté) imprime aussi les tickets.</p>
+              <Switch checked={deviceIsKitchen} onChange={(v) => { setKitchenPrinterDevice(v); setDeviceIsKitchen(v); }} label="Cet appareil est le poste d’impression laboratoire" />
+              <p className="text-xs text-text-muted">Les profils « Laboratoire » impriment automatiquement. Activez cette option pour qu’un autre appareil (connecté) imprime aussi les tickets.</p>
             </div>
           )}
           {isKitchen && <p className="text-xs text-text-muted flex items-center gap-1"><User size={12} /> Ce profil cuisine imprime automatiquement les tickets lorsque l’option est activée.</p>}

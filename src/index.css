@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 :root {
-  /* Altech Food — bold fast-food palette */
-  --color-cream: #fff8f3;
-  --color-gold: #ff6b2c;
-  --color-gold-light: #ffa76b;
-  --color-gold-dark: #e24e0e;
-  --color-rose: #ef4444;
-  --color-rose-deep: #c1121f;
-  --color-lavender: #0ea5a4;
-  --color-chocolate: #1a120b;
-  --color-caramel: #f59e0b;
-  --color-pistachio: #16a34a;
-  --color-vanilla: #ffeee2;
-  --color-sun: #ffc43d;
+  /* Altech Pâtisserie — raspberry, chocolate & cream palette */
+  --color-cream: #FFF8F6;
+  --color-gold: #D6457F;
+  --color-gold-light: #F4A6C2;
+  --color-gold-dark: #B02E66;
+  --color-rose: #E11D48;
+  --color-rose-deep: #9F1239;
+  --color-lavender: #9B7FD6;
+  --color-chocolate: #2E1A17;
+  --color-caramel: #C68B3E;
+  --color-pistachio: #5E9E5A;
+  --color-vanilla: #FCE8EF;
+  --color-sun: #F2C77E;
 
-  /* Signature gradients — Altech Food */
-  --gradient-hero: linear-gradient(135deg, #c1121f 0%, #e63946 32%, #ff6b2c 72%, #ff8a3d 100%);
-  --gradient-sidebar: linear-gradient(180deg, #1a120b 0%, #2a1c10 52%, #231708 100%);
-  --gradient-card: linear-gradient(145deg, #ffffff 0%, #fff8f3 100%);
-  --gradient-button: linear-gradient(135deg, #ff8a3d 0%, #ff6b2c 50%, #e24e0e 100%);
-  --gradient-rose: linear-gradient(135deg, #ff7a7a 0%, #ef4444 50%, #c1121f 100%);
-  --gradient-lavender: linear-gradient(135deg, #2dd4bf 0%, #0ea5a4 50%, #0c7e7d 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 248, 243, 0.92) 0%, rgba(255, 238, 226, 0.75) 100%);
+  /* Signature gradients — Altech Pâtisserie */
+  --gradient-hero: linear-gradient(135deg, #4A2A25 0%, #8E2F5A 38%, #D6457F 74%, #F4A6C2 100%);
+  --gradient-sidebar: linear-gradient(180deg, #2E1A17 0%, #4A2A25 52%, #3A211D 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #FFF8F6 100%);
+  --gradient-button: linear-gradient(135deg, #E9739F 0%, #D6457F 50%, #B02E66 100%);
+  --gradient-rose: linear-gradient(135deg, #F58BA0 0%, #E11D48 50%, #9F1239 100%);
+  --gradient-lavender: linear-gradient(135deg, #C9B6EC 0%, #9B7FD6 50%, #7A5CC0 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 248, 246, 0.92) 0%, rgba(252, 232, 239, 0.75) 100%);
 
   /* Text */
-  --text-primary: #1f1206;
-  --text-secondary: #5c4632;
-  --text-muted: #9a8574;
-  --text-light: #fff8f3;
+  --text-primary: #3A1E1B;
+  --text-secondary: #6B4843;
+  --text-muted: #A88A86;
+  --text-light: #FFF8F6;
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(26, 18, 11, 0.08), 0 1px 4px rgba(26, 18, 11, 0.04);
-  --shadow-hover: 0 10px 34px rgba(226, 78, 14, 0.18), 0 2px 8px rgba(26, 18, 11, 0.08);
-  --shadow-gold: 0 8px 24px rgba(255, 107, 44, 0.42);
+  --shadow-card: 0 4px 24px rgba(46, 26, 23, 0.08), 0 1px 4px rgba(46, 26, 23, 0.04);
+  --shadow-hover: 0 10px 34px rgba(176, 46, 102, 0.18), 0 2px 8px rgba(46, 26, 23, 0.08);
+  --shadow-gold: 0 8px 24px rgba(214, 69, 127, 0.42);
 }
 
 * {
@@ -71,7 +71,7 @@ html[dir='rtl'] .font-display {
   font-family: 'Cairo', sans-serif;
 }
 
-/* Scrollbar styling — warm wood tones */
+/* Scrollbar styling — raspberry tones */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -80,11 +80,11 @@ html[dir='rtl'] .font-display {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 107, 44, 0.4);
+  background: rgba(214, 69, 127, 0.4);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 107, 44, 0.7);
+  background: rgba(214, 69, 127, 0.7);
 }
 
 /* Utility classes */
@@ -92,7 +92,7 @@ html[dir='rtl'] .font-display {
   background: var(--gradient-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 107, 44, 0.25);
+  border: 1px solid rgba(214, 69, 127, 0.25);
 }
 
 .text-gradient-gold {
@@ -128,7 +128,7 @@ html[dir='rtl'] .font-display {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, rgba(255, 107, 44, 0.04) 25%, rgba(255, 107, 44, 0.14) 50%, rgba(255, 107, 44, 0.04) 75%);
+  background: linear-gradient(90deg, rgba(214, 69, 127, 0.04) 25%, rgba(214, 69, 127, 0.14) 50%, rgba(214, 69, 127, 0.04) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
