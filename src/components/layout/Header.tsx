@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/Button';
 import { toast } from '@/components/ui/Toast';
 import { formatDateTime } from '@/lib/utils';
 
-const POST_LABELS: Record<string, string> = { kitchen: 'Cuisine', cashier: 'Caissier', deliverer: 'Livreur' };
+const POST_LABELS: Record<string, string> = { kitchen: 'Laboratoire', cashier: 'Caissier', deliverer: 'Livreur' };
 
 interface HeaderProps {
   onMenuClick: () => void;

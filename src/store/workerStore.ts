@@ -35,7 +35,7 @@ export const POST_DEFAULT_PERMISSIONS: Record<Exclude<WorkerPost, 'general'>, Wo
 
 export const POST_LABELS: Record<WorkerPost, string> = {
   general: 'Général (permissions manuelles)',
-  kitchen: 'Cuisine',
+  kitchen: 'Laboratoire',
   cashier: 'Caissier',
   deliverer: 'Livreur',
 };

@@ -26,7 +26,7 @@ import { useWorkerStore } from '@/store/workerStore';
 import { useCommandStore } from '@/store/commandStore';
 import { formatCurrency, formatDate, daysUntil, getMonthLabel } from '@/lib/utils';
 
-const CHART_COLORS = ['#FF6B2C', '#0EA5A4', '#16A34A', '#FFC43D', '#EF4444', '#F59E0B'];
+const CHART_COLORS = ['#D6457F', '#9B7FD6', '#5E9E5A', '#F2C77E', '#E11D48', '#C68B3E'];
 
 type RangeKey = 'today' | 'week' | 'month' | 'year' | 'all';
 
@@ -236,7 +236,7 @@ export default function Dashboard() {
               >
                 <div className="flex items-center gap-3">
                   <div className={`h-9 w-9 rounded-xl flex items-center justify-center text-white bg-gradient-to-br shrink-0 ${
-                    isOverdue ? 'from-[#FF7A7A] to-[#C1121F]' : 'from-[#FFA76B] to-[#E24E0E]'
+                    isOverdue ? 'from-[#F58BA0] to-[#9F1239]' : 'from-[#F4A6C2] to-[#B02E66]'
                   }`}>
                     <Clock size={16} />
                   </div>
@@ -290,9 +290,9 @@ export default function Dashboard() {
                 className="group flex flex-col items-start gap-2 p-3 rounded-xl border border-black/[0.06] bg-white hover:border-gold/30 hover:shadow-sm transition-all"
               >
                 <span className={`h-9 w-9 rounded-xl bg-gradient-to-br flex items-center justify-center text-white shadow-sm ${
-                  a.accent === 'gold' ? 'from-[#FFA76B] to-[#E24E0E]' :
-                  a.accent === 'pistachio' ? 'from-[#6EE7A8] to-[#16A34A]' :
-                  a.accent === 'caramel' ? 'from-[#FCD34D] to-[#F59E0B]' : 'from-[#2DD4BF] to-[#0C7E7D]'
+                  a.accent === 'gold' ? 'from-[#F4A6C2] to-[#B02E66]' :
+                  a.accent === 'pistachio' ? 'from-[#B5DDA4] to-[#5E9E5A]' :
+                  a.accent === 'caramel' ? 'from-[#F3D29A] to-[#C68B3E]' : 'from-[#C9B6EC] to-[#7A5CC0]'
                 }`}>{a.icon}</span>
                 <span className="text-sm font-semibold text-text-primary flex items-center gap-1">
                   {a.label}
@@ -312,15 +312,15 @@ export default function Dashboard() {
             <AreaChart data={salesEvolution}>
               <defs>
                 <linearGradient id="salesGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FF6B2C" stopOpacity={0.35} />
-                  <stop offset="100%" stopColor="#FF6B2C" stopOpacity={0} />
+                  <stop offset="0%" stopColor="#D6457F" stopOpacity={0.35} />
+                  <stop offset="100%" stopColor="#D6457F" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#FFD9C280" />
-              <XAxis dataKey="date" stroke="#9A8574" fontSize={11} />
-              <YAxis stroke="#9A8574" fontSize={11} />
-              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 12, border: '1px solid #FFD9C2' }} />
-              <Area type="monotone" dataKey="amount" stroke="#FF6B2C" strokeWidth={3} fill="url(#salesGrad)" dot={{ fill: '#E24E0E', r: 3 }} activeDot={{ r: 5 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F8D2E080" />
+              <XAxis dataKey="date" stroke="#A88A86" fontSize={11} />
+              <YAxis stroke="#A88A86" fontSize={11} />
+              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 12, border: '1px solid #F8D2E0' }} />
+              <Area type="monotone" dataKey="amount" stroke="#D6457F" strokeWidth={3} fill="url(#salesGrad)" dot={{ fill: '#B02E66', r: 3 }} activeDot={{ r: 5 }} />
             </AreaChart>
           </ResponsiveContainer>
         </Card>
@@ -329,14 +329,14 @@ export default function Dashboard() {
           <h3 className="font-display font-semibold text-text-primary mb-4">{t('salesVsPurchases')}</h3>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={monthlyComparison}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#FFD9C280" />
-              <XAxis dataKey="month" stroke="#9A8574" fontSize={11} />
-              <YAxis stroke="#9A8574" fontSize={11} />
-              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 12, border: '1px solid #FFD9C2' }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F8D2E080" />
+              <XAxis dataKey="month" stroke="#A88A86" fontSize={11} />
+              <YAxis stroke="#A88A86" fontSize={11} />
+              <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 12, border: '1px solid #F8D2E0' }} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Bar dataKey="sales" name={t('sales')} fill="#16A34A" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="purchases" name={t('purchase')} fill="#FF6B2C" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="expenses" name={t('expenses')} fill="#0EA5A4" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="sales" name={t('sales')} fill="#5E9E5A" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="purchases" name={t('purchase')} fill="#D6457F" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="expenses" name={t('expenses')} fill="#9B7FD6" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </Card>
@@ -350,7 +350,7 @@ export default function Dashboard() {
                   <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip contentStyle={{ borderRadius: 12, border: '1px solid #FFD9C2' }} />
+              <Tooltip contentStyle={{ borderRadius: 12, border: '1px solid #F8D2E0' }} />
             </PieChart>
           </ResponsiveContainer>
         </Card>

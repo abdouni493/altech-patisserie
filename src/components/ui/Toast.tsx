@@ -36,10 +36,10 @@ export const toast = {
 };
 
 const config = {
-  success: { icon: CheckCircle2, color: '#7A9E7E', bg: '#F0F7F1' },
-  error: { icon: XCircle, color: '#C4687A', bg: '#FBEEF2' },
-  warning: { icon: AlertTriangle, color: '#D4854A', bg: '#FCF3EA' },
-  info: { icon: Info, color: '#C9A84C', bg: '#FBF6E9' },
+  success: { icon: CheckCircle2, color: '#5E9E5A', bg: '#F0F7F1' },
+  error: { icon: XCircle, color: '#C2185B', bg: '#FCE8EF' },
+  warning: { icon: AlertTriangle, color: '#C68B3E', bg: '#FBF1E3' },
+  info: { icon: Info, color: '#9B7FD6', bg: '#F3EEFB' },
 };
 
 export function ToastViewport() {

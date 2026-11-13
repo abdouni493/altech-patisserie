@@ -597,17 +597,17 @@ export default function CaissePage() {
             <BreakdownGroup
               title={t('moneyIn')} total={c.periodIn} positive
               items={[
-                { label: t('sales'), value: c.salesPaid, color: 'from-[#6EE7A8] to-[#16A34A]' },
-                { label: t('deposit'), value: c.depositsP, color: 'from-[#FFD9C2] to-[#FF6B2C]' },
+                { label: t('sales'), value: c.salesPaid, color: 'from-[#B5DDA4] to-[#5E9E5A]' },
+                { label: t('deposit'), value: c.depositsP, color: 'from-[#F8D2E0] to-[#D6457F]' },
               ]}
             />
             <BreakdownGroup
               title={t('moneyOut')} total={c.periodOut}
               items={[
-                { label: t('purchase'), value: c.purchasesPaid, color: 'from-[#FCD34D] to-[#F59E0B]' },
-                { label: t('expenses'), value: c.expensesTotal, color: 'from-[#FF7A7A] to-[#C1121F]' },
-                { label: t('workers'), value: c.workerPayments, color: 'from-[#2DD4BF] to-[#0C7E7D]' },
-                { label: t('withdrawal'), value: c.withdrawalsP, color: 'from-[#FFA76B] to-[#C1121F]' },
+                { label: t('purchase'), value: c.purchasesPaid, color: 'from-[#F3D29A] to-[#C68B3E]' },
+                { label: t('expenses'), value: c.expensesTotal, color: 'from-[#F58BA0] to-[#9F1239]' },
+                { label: t('workers'), value: c.workerPayments, color: 'from-[#C9B6EC] to-[#7A5CC0]' },
+                { label: t('withdrawal'), value: c.withdrawalsP, color: 'from-[#F4A6C2] to-[#9F1239]' },
               ]}
             />
           </div>
@@ -638,7 +638,7 @@ export default function CaissePage() {
                       exit={{ opacity: 0, x: -20 }}
                       className="group flex items-center gap-3 p-3 rounded-xl bg-vanilla/40 border border-gold/10 hover:border-gold/30 transition-colors"
                     >
-                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center text-white shrink-0 bg-gradient-to-br ${isDeposit ? 'from-[#6EE7A8] to-[#16A34A]' : 'from-[#FF7A7A] to-[#C1121F]'}`}>
+                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center text-white shrink-0 bg-gradient-to-br ${isDeposit ? 'from-[#B5DDA4] to-[#5E9E5A]' : 'from-[#F58BA0] to-[#9F1239]'}`}>
                         {isDeposit ? <ArrowDownLeft size={18} /> : <ArrowUpRight size={18} />}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -745,9 +745,9 @@ function FlowCard({ index, icon, label, value, accent, signed }: {
 }) {
   const animated = useCountUp(value, 1100);
   const accents: Record<string, string> = {
-    mint: 'from-[#6EE7A8] to-[#16A34A]',
-    rose: 'from-[#FF7A7A] to-[#C1121F]',
-    gold: 'from-[#FFA76B] to-[#E24E0E]',
+    mint: 'from-[#B5DDA4] to-[#5E9E5A]',
+    rose: 'from-[#F58BA0] to-[#9F1239]',
+    gold: 'from-[#F4A6C2] to-[#B02E66]',
   };
   const text: Record<string, string> = { mint: 'text-pistachio', rose: 'text-rose-deep', gold: 'text-gold-dark' };
   const sign = signed && value > 0 ? '+ ' : signed && value < 0 ? '− ' : '';

@@ -86,9 +86,9 @@ export function buildKitchenTicket(cmd: Command, store: StoreSettings): string {
   const rows = cmd.items
     .map((l) => `<tr><td class="qty">${l.quantity}${l.sellByUnit && l.sellUnit ? ` ${esc(l.sellUnit)}` : '×'}</td><td>${esc(l.productName)}</td></tr>`)
     .join('');
-  return `<html><head><title>Cuisine ${esc(cmd.reference)}</title><style>${ticketCss}</style></head><body>
+  return `<html><head><title>Laboratoire ${esc(cmd.reference)}</title><style>${ticketCss}</style></head><body>
     <div class="center">
-      <div class="muted">${esc(store.name)} — TICKET CUISINE</div>
+      <div class="muted">${esc(store.name)} — TICKET LABORATOIRE</div>
       <div class="big">${esc(cmd.reference)}</div>
       ${serviceBlock(cmd, true)}
       <div class="muted" style="margin-top:4px">${formatDateTime(cmd.createdAt)} · ${esc(cmd.createdBy || '')}</div>

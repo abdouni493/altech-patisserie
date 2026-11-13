@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { UtensilsCrossed, ShoppingBag, Bike, MapPin, Phone, Hash } from 'lucide-react';
+import { Coffee, ShoppingBag, Bike, MapPin, Phone, Hash } from 'lucide-react';
 import { useWorkerStore } from '@/store/workerStore';
 import type { OrderServiceInfo, OrderType } from '@/types';
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const OPTIONS: { key: OrderType; label: string; icon: typeof Bike }[] = [
-  { key: 'table', label: 'Sur place', icon: UtensilsCrossed },
+  { key: 'table', label: 'Sur place', icon: Coffee },
   { key: 'takeaway', label: 'À emporter', icon: ShoppingBag },
   { key: 'delivery', label: 'Livraison', icon: Bike },
 ];
